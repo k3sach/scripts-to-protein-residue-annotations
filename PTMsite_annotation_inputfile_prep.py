@@ -44,11 +44,11 @@ df2 = pd.DataFrame(output, columns=["UniprotId", "PTMaa","PTMpos", "Metadata"])
 df2.to_csv('output_ptms.csv', index=False)
 
 ## corresponding FASTA file processing
-tmp=[]
+UniP=[]
 counter=0
 for t,k in enumerate(fh2):
     if k.startswith(">"):
         l=k.strip().split("|")[-1]
-        tmp.append(l)
+        UniP.append(l)
         counter=counter+1
-print(tmp)
+print(UniP)
